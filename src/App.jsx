@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { NavermapsProvider } from 'react-naver-maps';
 import { Box, Container, Grid2, styled, ThemeProvider } from '@mui/material';
 import Main from './layout/Main/Main';
 import { Heading1 } from './components/Text';
@@ -21,7 +20,6 @@ const Wrapper = styled(Box)({
 })
 
 function App() {
-  const clientId = import.meta.env.VITE_APP_NAVERMAPS_CLIENT_ID;
   const [isVisible, setIsVisible] = useState(false);
   const galleryRef = useRef(null);
 
@@ -65,10 +63,8 @@ function App() {
             <GalleryWrap />
           </Wrapper>
           <Wrapper>
-            <NavermapsProvider ncpClientId={clientId}>
-              <Heading1>오시는 길</Heading1>
-              <Location />
-            </NavermapsProvider>
+            <Heading1>오시는 길</Heading1>
+            <Location />
           </Wrapper>
           <Wrapper>
             <Heading1>방명록</Heading1>
