@@ -1,0 +1,48 @@
+{
+  "name": "dongyeop-jihyeon-page",
+  "version": "0.0.0",
+  "private": true,
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "homepage": "https://github.com/dongyeopoh/dongyeop-jihyeon-wedding#readme",
+  "bugs": {
+    "url": "https://github.com/dongyeopoh/dongyeop-jihyeon-wedding/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dongyeopoh/dongyeop-jihyeon-wedding.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "eslint.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@mui/icons-material": "^6.1.2",
+    "@mui/material": "^6.1.2",
+    "date-fns": "^4.1.0",
+    "photoswipe": "^5.4.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-naver-maps": "^0.1.3",
+    "react-photoswipe-gallery": "^3.0.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "vite": "^5.4.1"
+  }
+}

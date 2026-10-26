@@ -1,0 +1,63 @@
+{
+    "greeting": {
+    "message":"2023년 8월, 여름의 끝자락.\n계룡산 자락에서 우연히 마주한 두 사람이 있었습니다.\n그날의 작은 만남이 인연이 되어,\n이제 서로의 손을 잡고 새로운 길을 걷고자 합니다.\n저희의 앞날을 따뜻하게 축복해 주시면 감사하겠습니다.",
+    "owner":"오동엽 • 이지현 올림",
+    "host": {
+        "groom": {
+        "name": "동엽",
+        "relation": "아들",
+        "parents": [
+            {
+            "relation": "아버지",
+            "name": "오태희"
+            },
+            {
+            "relation": "어머니",
+            "name": "김형경"
+            }
+        ]
+        },
+        "bride": {
+        "name": "지현",
+        "relation": "딸",
+        "parents": [
+            {
+            "relation": "아버지",
+            "name": "이상철"
+            },
+            {
+            "relation": "어머니",
+            "name": "서계옥"
+            }
+        ]
+        }
+    },
+    "eventDetail": "2024년 11월 2일 (토) PM 12:00\n\n무주 태권도원 명인관",
+    "detailTitle1": "오동엽 \uD83D\uDC8D 이지현",
+    "detailTitle2": "결혼합니다!",
+    "dday":"2024년 11월 2일 (토) PM 12:00",
+    "place":"무주 태권도원 명인관"
+    },
+    "mapInfo": {
+    "address1": "무주 태권도원 명인관",
+    "address2": "전북 무주군\n설천면 무설로 1482\n (우) 55547",
+    "naverMap": "https://map.naver.com/p/directions/-/14224211.2717965,4301229.3953849,%ED%83%9C%EA%B6%8C%EB%8F%84%EC%9B%90%EB%8F%84%EC%95%BD%EC%84%BC%ED%84%B0,33152944,PLACE_POI/-/transit?c=15.00,0,0,0,dh",
+    "kakaoMap": "https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=,,675405,697101&rt1=&rt2=%ED%83%9C%EA%B6%8C%EB%8F%84%EC%9B%90%20%EB%8F%84%EC%95%BD%EC%84%BC%ED%84%B0&rtIds=,1859743502",
+    "lat": 35.99714,
+    "lon": 127.775443
+    },
+    "locationInfo": [
+        {
+            "title": "\uD83D\uDCCD 찾아오시는 방법 (자차)",
+            "desc": "\uD83D\uDC49\uD83C\uDFFB  태권도원 도약센터 검색"
+        },
+        {
+            "title": "\uD83D\uDCCD 주차안내",
+            "desc": "\uD83D\uDC49\uD83C\uDFFB  도약센터 주차장 주차 후 셔틀버스 탑승"
+        },
+        {
+            "title": "\uD83D\uDCCD 셔틀버스 - 11:00 ~ 16:00 (10분간격 운행)",
+            "desc": "\uD83D\uDC49\uD83C\uDFFB  탑승위치 - 도약센터 건물 앞 \n\uD83D\uDC49\uD83C\uDFFB  예식장행 - 11:00 부터 도약센터 앞 탑승 \n\uD83D\uDC49\uD83C\uDFFB  주차장행 - 11:10 부터 예식장 앞 탑승"
+        }
+    ]
+}
