@@ -1,10 +1,10 @@
-// import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { Button, Stack } from '@mui/material';
 import { ArrowCircleUp, ShareOutlined } from '@mui/icons-material';
 
 
-function FloatingBar ( isVisible ) {
+function FloatingBar({ isVisible }) {
   
 
   const handleCopy = () => {
@@ -41,6 +41,10 @@ function FloatingBar ( isVisible ) {
 
     </Nav>
   );
+};
+
+FloatingBar.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
 };
 
 export default FloatingBar;
