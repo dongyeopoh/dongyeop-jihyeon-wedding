@@ -12,7 +12,7 @@ GitHub Pages (저장소 dongyeopoh/dongyeop-jihyeon-wedding 의 gh-pages 브랜�
   │  index.html → assets/index-*.js, index-*.css, 사진 26장 + 약도 + 메인 사진
   ▼
 브라우저 안의 React 앱 (src/ 가 빌드된 번들)
-  ├─ 네이버 지도 JS SDK (ncpClientId 로 인증, 지도 타일은 네이버 서버에서 직접 수신)
+  ├─ 네이버 지도 JS 스크립트 (Map 컴포넌트가 ncpKeyId 로 직접 로드, 지도 타일은 네이버 서버에서 직접 수신)
   ├─ utterances (https://utteranc.es/client.js) → GitHub 이슈 API 로 방명록 읽기/쓰기
   ├─ Google Fonts (Noto Sans KR, Roboto) 및 눈누 폰트 CDN (HSSanTokki20, SUITE)
   └─ 외부 링크: 네이버 지도 길찾기, 카카오맵 길찾기, 구글 캘린더 일정 추가, 인스타그램
@@ -35,7 +35,7 @@ GitHub Pages (저장소 dongyeopoh/dongyeop-jihyeon-wedding 의 gh-pages 브랜�
 | 7 | 화면 하단 고정 바: 맨 위로, 주소 복사 | `src/layout/FloatingBar` | 없음 |
 | 8 | 푸터 | `src/layout/Footer` | `App.jsx`가 넘기는 문구 |
 
-"마음 전하실 곳"(계좌) 섹션은 2026년 1월에 화면에서 빠졌고 2026-10-26 에 코드(`src/layout/Account`), 아이콘, 데이터(`hostInfo`)가 모두 삭제되었다. `data.json` 은 통째로 번들에 들어가므로 이 삭제가 운영 사이트에 반영되는 시점은 재배포 때다.
+"마음 전하실 곳"(계좌) 섹션은 2026년 1월에 화면에서 빠졌고 2026-10-26 에 코드(`src/layout/Account`), 아이콘, 데이터(`hostInfo`)가 모두 삭제되어 운영 사이트에도 반영되었다. `data.json` 은 통째로 번들에 들어가므로 이 파일에 넣는 값은 모두 공개된다.
 
 ## 모듈 지도와 의존 방향
 
@@ -54,23 +54,23 @@ src/main.jsx ──▶ src/App.jsx ──▶ src/layout/**  ──▶ src/compon
 ## 빌드와 배포 경로
 
 ```
-src/ + index.html + .env(VITE_APP_NAVERMAPS_CLIENT_ID)
-   │  vite build  (base 경로 "/dongyeop-jihyeon-wedding/" 가 모든 자산 URL 앞에 붙음)
+src/ + index.html + public/ + .env(VITE_NAVERMAPS_KEY_ID)
+   │  vite build  (base 경로 "/dongyeop-jihyeon-wedding/" 가 모든 자산 URL 앞에 붙음. 키가 없으면 여기서 중단)
    ▼
-dist/  (main 브랜치에 커밋되는 산출물)
-   │  git subtree push --prefix dist origin gh-pages
+dist/  (로컬 전용, git 무시 대상)
+   │  npm run deploy: 린트 → 빌드 → 미리보기 확인 → dist 내용으로 커밋 하나 생성 → gh-pages 에 푸시
    ▼
-gh-pages 브랜치 (dist 내용이 최상위에 놓임) ──▶ GitHub Pages 가 그대로 서비스
+gh-pages 브랜치 (배포 회차마다 스냅샷 커밋 하나씩, 최상위가 사이트 루트) ──▶ GitHub Pages 가 그대로 서비스
 ```
 
-네이버 지도 클라이언트 ID 는 빌드 시점에 번들 안으로 들어간다. 즉 배포된 JS 안에 ID 가 평문으로 있으며, 이는 브라우저용 지도 키의 정상적인 사용 방식이다.
+네이버 지도 Key ID 는 빌드 시점에 지도 스크립트 주소 안에 박혀 번들에 들어간다. 즉 배포된 JS 안에 ID 가 평문으로 있으며, 이는 브라우저용 지도 키의 정상적인 사용 방식이다(네이버 콘솔에 등록된 주소에서만 동작한다). main 에는 소스와 문서만 있고 빌드 산출물은 gh-pages 에만 있다.
 
 ## 외부 의존 서비스
 
 | 서비스 | 역할 | 끊겼을 때 |
 |---|---|---|
 | GitHub Pages | 정적 호스팅 | 사이트 전체 접속 불가 |
-| 네이버 클라우드 Maps (Web Dynamic Map) | 오시는 길 지도 | 지도 영역만 빈 칸, 길찾기 버튼은 동작 |
+| 네이버 클라우드 Maps (Web Dynamic Map) | 오시는 길 지도 | 지도 자리에 "지도를 불러오지 못했습니다" 안내 상자, 길찾기 버튼·약도는 동작 |
 | utterances + GitHub 이슈 | 방명록 저장소 | 방명록 영역만 빈 칸 |
 | Google Fonts, jsDelivr(눈누 폰트) | 제목·본문 글꼴 | 시스템 글꼴로 대체되어 표시 |
 | 네이버 지도·카카오맵·구글 캘린더 링크 | 새 탭으로 여는 외부 페이지 | 해당 버튼만 실패 |
