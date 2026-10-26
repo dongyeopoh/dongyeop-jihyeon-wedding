@@ -18,7 +18,7 @@
 | `og:site_name` | 동엽이와 지현이의 모바일 청첩장 |
 | `og:url` | 위 공개 주소 |
 | `og:locale` | ko_KR |
-| `og:image` | 1500×1000 사진. 현재는 만료된 외부 주소라 사진이 나오지 않으며, 사이트 안 파일로 교체 예정 |
+| `og:image` | `https://dongyeopoh.github.io/dongyeop-jihyeon-wedding/thumbnail.jpg?v=20261026` (1500×1000, 사이트 안 파일). 사진을 바꾸면 `?v=` 값을 바꿔 메신저 캐시를 피한다 |
 
 ## 방명록 저장 형식 (GitHub 이슈)
 
