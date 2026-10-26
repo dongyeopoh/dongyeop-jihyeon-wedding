@@ -46,13 +46,13 @@ const ResultText = styled.p`
   margin: 30px 0;
 `;
 
+// 고정된 날짜 설정 (2024년 11월 2일 오후 12시)
+const fixedDate = new Date('2024-11-02T12:00:00');
+const displayMonth = new Date(2024, 10);  // 2024년 11월 고정 (0-indexed, 10 = November)
+
 const Calendar = () => {
-  // 고정된 날짜 설정 (2024년 11월 2일 오후 12시)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const fixedDate = new Date('2024-11-02T12:00:00');
   const [secondsLeft, setSecondsLeft] = useState(null);
 //   const today = new Date();  // 현재 시간은 오늘을 기준으로 사용
-  const displayMonth = new Date(2024, 10);  // 2024년 11월 고정 (0-indexed, 10 = November)
 
   // 11월 첫 날과 마지막 날
   const startOfDisplayMonth = startOfMonth(displayMonth);
@@ -79,7 +79,7 @@ const Calendar = () => {
     }, 1000); // 1초마다 갱신
 
     return () => clearInterval(interval); // 컴포넌트 언마운트 시 타이머 제거
-  }, [fixedDate]);
+  }, []);
 
   // 남은 시간 계산 (일, 시간, 분, 초)
   const getTimeLeft = (totalSeconds) => {
