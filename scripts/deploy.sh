@@ -49,11 +49,7 @@ check_branch() {
   local branch
   branch="$(git branch --show-current)"
   if [ "$branch" != "main" ]; then
-    if [ -n "$DRY_RUN" ]; then
-      echo "경고: 현재 브랜치가 main 이 아닙니다 (${branch:-분리된 HEAD}). DRY_RUN 이므로 계속 진행합니다." >&2
-    else
-      fail "현재 브랜치가 main 이 아닙니다 (${branch:-분리된 HEAD})"
-    fi
+    fail "현재 브랜치가 main 이 아닙니다 (${branch:-분리된 HEAD})"
   fi
 }
 

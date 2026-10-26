@@ -16,7 +16,7 @@ printf 'VITE_NAVERMAPS_KEY_ID=<콘솔의 Key ID>\n' > .env   # 없으면 빌드�
 npm run dev                              # http://localhost:5173/dongyeop-jihyeon-wedding/ 에서 확인
 ```
 
-`.env` 가 없으면 `npm run dev` 와 `npm run build` 가 "VITE_NAVERMAPS_KEY_ID 가 .env 에 없습니다" 와 함께 멈춘다. 개발 서버는 같은 Wi-Fi 의 휴대폰에서 `http://<이 컴퓨터의 LAN IP>:5173/dongyeop-jihyeon-wedding/` 로도 열린다. 그 주소는 네이버 콘솔에 등록되어 있지 않으므로 지도 자리에 "지도를 불러오지 못했습니다" 안내가 뜨는 것이 정상이고, 지도 확인은 `localhost` 주소에서 한다.
+2026-10-26 이력 정리 이전에 받아 둔 클론이 다른 컴퓨터에 있다면 그쪽은 지우고 새로 받는다(main·gh-pages 모두 이력이 새로 시작되었다). `.env` 가 없으면 `npm run dev` 와 `npm run build` 가 "VITE_NAVERMAPS_KEY_ID 가 .env 에 없습니다" 와 함께 멈춘다. 개발 서버는 같은 Wi-Fi 의 휴대폰에서 `http://<이 컴퓨터의 LAN IP>:5173/dongyeop-jihyeon-wedding/` 로도 열린다. 그 주소는 네이버 콘솔에 등록되어 있지 않으므로 지도 자리에 "지도를 불러오지 못했습니다" 안내가 뜨는 것이 정상이고, 지도 확인은 `localhost` 주소에서 한다.
 
 ## 환경 변수
 
@@ -41,7 +41,7 @@ npm run dev                              # http://localhost:5173/dongyeop-jihyeo
 소스·문서 변경을 먼저 main 에 커밋하고 푸시한 뒤, main 에서 배포 명령 하나를 실행한다.
 
 ```bash
-git add src public index.html package.json package-lock.json vite.config.js eslint.config.js scripts docs CLAUDE.md AGENTS.md
+git add -A                                       # dist, .env, 도구 폴더는 .gitignore 로 빠진다
 git commit -m "<한국어 한 줄 요약>"
 git push origin main
 npm run deploy

@@ -10,7 +10,7 @@
 
 - 증상: 오시는 길 섹션의 지도 자리에 안내 문구 상자만 보인다(길찾기 버튼과 약도는 정상).
 - 원인 두 가지. (1) `.env` 의 `VITE_NAVERMAPS_KEY_ID` 값이 네이버 콘솔의 Key ID 와 다르다(키가 아예 없으면 빌드 자체가 멈추므로, 뜬다면 값이 틀린 것이다). (2) 접속한 주소가 네이버 콘솔의 Web 서비스 URL 에 등록되어 있지 않다. 개발 서버 `http://localhost:5173`, 배포 전 미리보기 `http://localhost:4173`, 운영 `https://dongyeopoh.github.io` 가 각각 등록되어 있어야 한다. 휴대폰에서 LAN 주소로 열면 미등록이라 이 안내가 뜨는 것이 정상이다. 네이버는 인증 실패를 스크립트 로드 **뒤에** `window.navermap_authFailure` 로 알려 주므로, `Map.jsx` 는 이미 만든 지도를 지우고 안내 상자로 바꾼다.
-- 대응: 콘솔의 Key ID 와 `.env` 값을 대조하고 다시 빌드하거나, 콘솔에 접속 주소를 등록한다. 확인: `grep -c "ncpKeyId=$(tail -1 .env | cut -d= -f2 | tr -d '\"')" dist/assets/index-*.js` 가 1 이어야 번들에 키가 들어간 것이다.
+- 대응: 콘솔의 Key ID 와 `.env` 값을 대조하고 다시 빌드하거나, 콘솔에 접속 주소를 등록한다. 확인: `grep -c "ncpKeyId=$(grep '^VITE_NAVERMAPS_KEY_ID=' .env | cut -d= -f2- | tr -d '\"')" dist/assets/index-*.js` 가 1 이어야 번들에 키가 들어간 것이다.
 
 ## 지도 스크립트는 한 번만 끼워 넣는다
 

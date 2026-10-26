@@ -25,7 +25,7 @@
 ## 자격 증명 관리
 
 - **GitHub 접근**: git 푸시는 SSH 키 또는 운영체제 자격 증명 관리자로 한다. 토큰을 저장소 주소 안에 "아이디:토큰@github.com" 꼴로 넣어 두는 방식은 금지한다(이런 꼴은 비밀 검출 서비스에도 걸린다. 문서에 예시로 적을 때도 실제 주소 형태로 쓰지 않는다). `package.json`, `.git/config`, 셸 기록 어디에도 `ghp_` 로 시작하는 문자열이 남아 있으면 안 된다. 푸시 인증은 `gh auth login` 으로 로그인한 `dongyeopoh` 계정의 자격 증명을 쓴다.
-- **네이버 지도 Key ID**: 네이버 클라우드 플랫폼 콘솔의 Maps 애플리케이션에서 발급한다(2026-10-26 에 옛 "클라이언트 ID" 방식에서 전환했다. 옛 애플리케이션은 콘솔에서 삭제한다). 발급 시 "Web 서비스 URL" 에 `https://dongyeopoh.github.io`, `http://localhost:5173`, `http://localhost:4173` 을 등록해야 운영·개발·배포 전 미리보기 모두에서 지도가 뜬다. 교체 절차: 콘솔에서 새 Key ID 발급 → `.env` 의 `VITE_NAVERMAPS_KEY_ID` 값 교체 → `npm run deploy`. 옛 Key ID 는 콘솔에서 삭제한다. 만료 기한은 없고, 콘솔에서 삭제하는 순간 무효가 된다.
+- **네이버 지도 Key ID**: 네이버 클라우드 플랫폼 콘솔의 Maps 애플리케이션에서 발급한다(2026-10-27 에 옛 "클라이언트 ID" 방식에서 전환했다. 옛 애플리케이션은 콘솔에서 삭제한다). 발급 시 "Web 서비스 URL" 에 `https://dongyeopoh.github.io`, `http://localhost:5173`, `http://localhost:4173` 을 등록해야 운영·개발·배포 전 미리보기 모두에서 지도가 뜬다. 교체 절차: 콘솔에서 새 Key ID 발급 → `.env` 의 `VITE_NAVERMAPS_KEY_ID` 값 교체 → `npm run deploy`. 옛 Key ID 는 콘솔에서 삭제한다. 만료 기한은 없고, 콘솔에서 삭제하는 순간 무효가 된다.
 - `.env` 는 git 에 절대 올리지 않는다(`.gitignore` 에 등록되어 있음). 새 컴퓨터에서는 콘솔에서 ID 를 다시 확인해 `.env` 를 손으로 만든다.
 
 ## 개인정보 정책

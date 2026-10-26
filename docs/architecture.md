@@ -28,7 +28,7 @@ GitHub Pages (저장소 dongyeopoh/dongyeop-jihyeon-wedding 의 gh-pages 브랜�
 |---|---|---|---|
 | 1 | 메인 사진 + 스크롤에 따라 사라지는 인사말 오버레이 | `src/layout/Main` | `data.json`의 `greeting` |
 | 2 | 모시는 글: 인사말, 양가 혼주, 일시·장소, 구글 캘린더 버튼 | `src/layout/Invitation`, `src/layout/Contact` | `greeting`, `greeting.host` |
-| 2-1 | (모시는 글 안) 달력(2024년 11월 고정)과 D-day 초 단위 카운터 | `src/layout/Calendar` | 컴포넌트 안에 고정된 날짜 상수 |
+| 2-1 | (모시는 글 안) 달력(2024년 11월 고정)과 D-day 초 단위 카운터 | `src/layout/Calendar` | `Calendar.jsx` 최상위의 고정 날짜 상수 |
 | 4 | 갤러리: 접힌 상태(60vh) → "사진 더보기" → 라이트박스 | `src/layout/Gallery` | `Images.jsx`의 사진 목록 |
 | 5 | 오시는 길: 네이버 지도, 길찾기 버튼, 약도 이미지, 주차·셔틀 안내 | `src/layout/Location` | `mapInfo`, `locationInfo` |
 | 6 | 방명록 (utterances) | `src/layout/Comment` | 없음 (GitHub 이슈) |
