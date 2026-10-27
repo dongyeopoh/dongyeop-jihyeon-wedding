@@ -10,8 +10,8 @@
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 [![MUI](https://img.shields.io/badge/MUI-6-007FFF?logo=mui&logoColor=white)](https://mui.com/)
-[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-배포-222222?logo=githubpages&logoColor=white)](https://dongyeopoh.github.io/dongyeop-jihyeon-wedding/)
-![상태](https://img.shields.io/badge/상태-기록용%20보존-B8860B)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-%EB%B0%B0%ED%8F%AC-222222?logo=githubpages&logoColor=white)](https://dongyeopoh.github.io/dongyeop-jihyeon-wedding/)
+![상태](https://img.shields.io/badge/%EC%83%81%ED%83%9C-%EA%B8%B0%EB%A1%9D%EC%9A%A9%20%EB%B3%B4%EC%A1%B4-B8860B)
 
 ### [💌 청첩장 바로가기](https://dongyeopoh.github.io/dongyeop-jihyeon-wedding/)
 
