@@ -108,9 +108,12 @@ printf '휴대폰 너비로 확인했습니까? (y/N) '
 answer=""
 read -r answer || true
 stop_preview
-if [ "$answer" != "y" ]; then
-  fail "눈 확인이 되지 않아 배포하지 않습니다"
-fi
+# 앞뒤 공백을 지우고 y / Y / yes 만 승인으로 본다
+answer="$(printf '%s' "$answer" | tr -d '[:space:]' | tr '[:upper:]' '[:lower:]')"
+case "$answer" in
+  y|yes) ;;
+  *) fail "눈 확인이 되지 않아 배포하지 않습니다 (입력: '${answer}')" ;;
+esac
 
 # 5. 스냅샷 커밋 ---------------------------------------------------------
 echo "==> gh-pages 가져오기"
